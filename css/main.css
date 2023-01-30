@@ -1,6 +1,6 @@
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f4f1de;
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,35 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #3d405b;
+}
+
+.skip-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skip-links a {
+  position: absolute;
+  top: -3em;
+  background-color: black;
+  color: white;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+
+.skip-links a:focus {
+  top: 0;
+}
+
+header {
+  color: #3d405b;
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .container {
@@ -24,24 +52,73 @@ img {
   width: 100%;
 }
 
-.main-nav ul {
+.crop-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.crop-container img {
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
+
+
+#main-nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  background-color: #3d405b;
+  color: #f4f1de;
 }
 
-.main-nav ul li {
+a:hover {
+  background-color: #5d618a;
+}
+
+#main-nav ul li {
   flex: 1;
   text-align: center;
 }
 
-.main-nav ul li a {
+#main-nav ul li a {
   display: block;
   color: inherit;
   text-decoration: none;
   font-size: 1.25rem;
+}
+
+#main-content {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+  grid-template-areas: 
+  "heading heading"
+  "owner address"
+  ;
+}
+
+.welcome {
+  grid-area: heading;
+}
+
+.owner {
+  grid-area: owner;
+}
+
+.address {
+  grid-area: address;
+}
+
+.owner-list {
+  list-style: none;
+  line-height: 2rem;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
 }
 
 form input,
@@ -52,7 +129,7 @@ form textarea {
   padding: .5rem 1rem;
 }
 
-form textarea {
+form #yourmessage {
   min-height: 150px;
   max-height: 150px;
   height: 150px;

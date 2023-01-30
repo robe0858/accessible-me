@@ -8,15 +8,24 @@
   <title>Accessible Me</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
   <div class="container">
+
+    <!-- SKIP LINKS -->
+    <ul class="skip-links">
+      <li><a href="#main-nav">Skip to main nav</a></li>
+      <li><a href="#main-content">Skip to main content</a></li>
+    </ul>
+
+    <!-- MAIN-BODY -->
     <div class="site-header">
-      <h1>Jam Box Studios</h1>
-      <div class="main-nav">
+      <header>Jam Box Studios</header>
+      <div role="navigation" id="main-nav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
@@ -24,44 +33,59 @@
           <li><a href="#">Studio</a></li>
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
+      <div class="crop-container">
+        <img src="https://placekitten.com/1200/900" class="banner" alt="kittens">
+      </div>
     </div>
-    <div class="main-content">
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+    <div role="main" id="main-content">
+      <div class="welcome">
+        <h1 role="heading">Welcome to Jam Box</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa
+          eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio
+          quia veritatis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam
+          omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto
+          error voluptatibus.</p>
+      </div>
       <div class="owner">
-        <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+        <h1 role="heading">Meet the owner</h1>
+        <ul role="list" itemscope itemtype="https://schema.org/Person" class="owner-list">
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobTitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h1>Address</h1>
-        <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
-        </p>
       </div>
-      <div class="contact-section">
-        <h1>Contact Us</h1>
-        <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
-          <b>Your Message</b>
-          <textarea></textarea>
-          <button type="submit">Send</button>
-        </form>
+      <div class="address">
+        <h1 role="heading">Address</h1>
+        <ul itemscope itemtype="https://schema.org/PostalAddress">
+          <li>Jambox Studios</li>
+          <li itemprop="streetAddress">Guitar Road,</li>
+          <li itemprop="addressRegion">Musicville,</li>
+          <li itemprop="addressCountry">Dancistan</li> 
+          <li itemprop="postalCode">B3T 0L0</li>
+        </ul>
       </div>
     </div>
-    <div class="site-footer">
+    <div class="contact-section">
+      <h1 role="heading">Contact Us</h1>
+      <form role="form" action="thanks.html">
+        <label for="fullname">Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject">
+        <label for="yourmessage">Message</label>
+        <input type="text" id="yourmessage" name="yourmessage">
+        <button role="button" type="submit">Send</button>
+      </form>
+    </div>
+    <div role="contentinfo" class="site-footer">
       &copy; 2021 Jam Box Studios
     </div>
+  </div>
+
   </div>
 </body>
 
